@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>specificity experimenten</title>
+    <link rel="stylesheet" href="mediahuis.css">
+    <link rel="stylesheet" href="specificity.css">
+</head>
+<body>
+    <!-- Experiment 1: Element selector-->
+    <h1>Experiment 1: Element selector</h1>
+        <!-- h2 met class neemt de styling van de gezamenlijke stylesheet (10 > 1) -->
+        <h2 class="font-nav-primary">Ik ben een heading, welke kleur krijg ik?</h2>
+
+        <!-- h2 zonder class neemt de styling van de specificity.css -->
+        <h2>Ik ben ook een heading, welke kleur krijg ik?</h2>
+
+    <!-- Experiment 2: Class selector -->
+    <h1>Experiment 2: Class selector</h1>
+        <!-- h2 met class neemt de styling van de gezamenlijke stylesheet (10 > 1) -->
+        <!-- class green wordt alleen gedefinieerd in specificity css, dus wordt groen -->
+        <h2 class="font-nav-primary green">Ik ben een heading met twee classes</h2>
+    
+    <h1>Experiment 3: Class volgorde</h1>
+    <!-- Experiment 3: Class volgorde -->
+    <!-- h2 elementen worden nu hotpink, omdat in de head de link naar specificity.css onder het gezamenlijke stylesheet staat -->
+
+    <h1>Experiment 4: ID selector</h1>
+    <!-- Experiment 4: ID selector -->
+    <h2 class="font-nav-primary" id="heading">Ik ben een heading met een ID</h2>
+    <!-- id weegt zwaarden dan class (100 > 10), dus de style van de id wordt meegenomen -->
+</body>
+</html>
