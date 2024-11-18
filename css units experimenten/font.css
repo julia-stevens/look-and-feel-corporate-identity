@@ -1,0 +1,60 @@
+body {
+    font-size: 16px;
+    /* font-size: 24px; */
+}
+
+.absolute-lenghts-cm {
+    width: 13cm;
+}
+
+.absolute-lenghts-px {
+    width: 500px;
+}
+
+.relative-lenghts-em {
+    width: 31.25em;
+    font-size: 24px;
+}
+
+.relative-lenghts-em-monospaced {
+    font-family: monospace;
+    width: 31.25em;
+    font-size: 24px;
+}
+
+.relative-lenghts-rem {
+    width: 31.25rem;
+    font-size: 24px;
+}
+
+.relative-lenghts-rem-sans {
+    font-family: sans-serif;
+    width: 31.25rem;
+    font-size: 24px;
+}
+
+.relative-lenghts-ch {
+    width: 65ch;
+}
+
+.vw {
+    width: 35vw;
+    /* font-size: 24px; */
+}
+
+.cqw {
+    width: 1000px;
+    background-color: olive;
+}
+
+.cqw p {
+    width: 30cqw;
+}
+
+.dvw {
+    width: 35dvw;
+}
+
+.vmax {
+    width: 35vmax;
+}

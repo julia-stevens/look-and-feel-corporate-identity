@@ -17,7 +17,7 @@
 
 body {
     font-size: 16px;
-    --remove-background: initial;
+    /* --remove-background: initial; */
     --padding-button: .3rem .6rem;
     --border-button: .5rem;
     --border-width: 2px;
@@ -110,7 +110,6 @@ nav {
 
     @media screen and (min-width: 800px) {
         display: inline;
-        background-color: var(--remove-background);
     }
 }
 
@@ -152,40 +151,69 @@ nav {
 
 /* Bij hover, voeg border bottom toe */
 .nav-links a:hover {
+    padding-bottom: 5px;
     border-bottom: 1.5px solid white;
+    transition: .2s ease-in-out;
 }
 
 /* Border bottom bij 'RADIO' */
-.nav-links li:nth-child(2) {
+.nav-links li:nth-child(2) a {
+    padding-bottom: 5px;
     border-bottom: 1.5px solid white;
 }
 
-/* Flex layout navigatie 'RADIO' pagina */
+/* Flex layout navigatie PROGRAMMERING, DJ'S, PLAYLIST, FREQUENTIES */
 .nav-radio {
     display: flex; 
     gap: 2rem;
     padding: 1rem;
     overflow-x: auto; 
+    border-bottom: 1px solid #CCCCCC;
 }
 
-.nav-radio, .nav-days a {
-    color: black; 
+/* Border actieve link navigatie PROGRAMMERING, DJ'S, PLAYLIST, FREQUENTIES */
+.nav-radio .text-highlight {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #E60063;
 }
 
+/* Bij hover, voeg border bottom toe */
+.nav-radio a:hover {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #E60063;
+    transition: .2s ease-in-out;
+}
+
+/* Flex layout dagen van de week & scroll bij overflow horizontaal */
 .nav-days {
     display: flex; 
     overflow-x: auto; 
 }
 
-.nav-days span {
+/* Border bij dagen van de week */
+.nav-days span:first-of-type {
     padding: 1rem;
+    width: 4rem;
+    border-right: 1px solid #CCCCCC;    
 
+    /* Flex layout als parent */
     display: flex; 
     flex-direction: column; 
     align-items: center;
-
 }
 
+/* Bij hover verander tekst kleur */
+.nav-days span:first-of-type:hover {
+    color: #E60063;
+    transition: .2s ease-in-out;
+}
+
+/* Bij hover over het eerste span element, van het tweede list item, van de nav-days (ul); blijft de tekst wit */
+.nav-days li:nth-child(2) span:first-of-type:hover {
+    color: white; 
+}
+
+/* Nummer van datum op een eigen regel door display: block; */
 .nav-days strong {
     display: block; 
 }
