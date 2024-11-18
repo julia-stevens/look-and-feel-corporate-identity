@@ -34,6 +34,8 @@ ul, li {
 
 button {
     cursor: pointer;
+    border: inherit;
+    background: none;
 }
 
 /* Flex layout nav */
@@ -65,8 +67,6 @@ nav {
 /* Hamburger */
 .nav-button {
     order: 0;
-    border: inherit;
-    background: none;
 }
 
 /* Hamburger afbeelding */
@@ -76,6 +76,10 @@ nav {
     @media screen and (min-width: 800px) {
         display: none;
     }
+}
+
+.nav-button img.showMenu {
+    content: url("../assests/hamburger-cross-white.svg");
 }
 
 /* Call-to-action */
@@ -216,4 +220,69 @@ nav {
 /* Nummer van datum op een eigen regel door display: block; */
 .nav-days strong {
     display: block; 
+}
+
+/* Flex layout navigatie zenders */
+.nav-zenders ul {
+    display: flex;
+    align-items: center; 
+    gap: 1.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    border-top: 1px solid #CCCCCC;    
+
+
+    @media screen and (min-width: 800px) {
+        display: none;
+    }
+}
+
+/* Afbeeldingen navigatie zenders */
+.nav-zenders ul img {
+    width: 5rem;
+}
+
+/* Bij hover over logo, vergroot afbeelding */
+.nav-zenders ul img:hover {
+    scale: 1.1; 
+    transition: .3s ease-in-out;
+}
+
+/*  */
+.nav-zenders {
+    position: absolute;
+    width: 100vw;
+
+    translate: 0% -100%;
+    z-index: -1; 
+
+    transition: .3s ease-in-out;
+
+}
+
+/*  */
+.nav-zenders.showZenders {
+    translate: 0% 0%;
+}
+
+/*  */
+.nav-zenders button img.showZenders {
+    content: url("../assests/arrow-up.svg");
+}
+
+/* Button navigatie zenders */
+.nav-zenders button {
+    border-left: 2px solid #CCCCCC;
+    border-right: 2px solid #CCCCCC;
+    border-bottom: 2px solid #CCCCCC;
+    padding: 0rem 4rem;
+    border-radius: 0 0 25px 25px;
+
+    position: absolute;
+    left: 50%; 
+    translate: -50%;
+
+    @media screen and (min-width: 800px) {
+        display: none;
+    }
 }
