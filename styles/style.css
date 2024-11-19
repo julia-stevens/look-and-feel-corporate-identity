@@ -54,6 +54,12 @@ nav {
     }
 }
 
+/* Header boven de main */
+header {
+    position: relative; 
+    z-index: 2; 
+}
+
 /* Zender logo */
 .nav-logo {
     order: 1;
@@ -233,7 +239,7 @@ nav {
     padding: 1rem;
     overflow-x: auto;
     border-top: 1px solid #CCCCCC;    
-
+    border-bottom: 1px solid #CCCCCC;
 
     @media screen and (min-width: 800px) {
         display: none;
@@ -272,9 +278,9 @@ nav {
 
 /* Button navigatie zenders */
 .nav-zenders button {
-    border-left: 2px solid #CCCCCC;
-    border-right: 2px solid #CCCCCC;
-    border-bottom: 2px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
     padding: 0rem 4rem;
     border-radius: 0 0 25px 25px;
 
@@ -287,13 +293,38 @@ nav {
     }
 }
 
+/* Tijdlijn */
+aside {
+    display: flex; 
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+}
+
+/* Gestreepte line tussen uren */
+aside > time::after {
+    content: "------";
+    display: block;
+    position: absolute;
+    rotate: 90deg;
+    margin-top: .7rem;
+    color: #CCCCCC;
+}
+
+/* Flex layout van de tijdlijn en de programmering */
+main {
+    display: flex; 
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 5rem;
+    position: relative; 
+    z-index: 1; 
+}
+
 /* Grid layout programmering */
 .programmering {
     display: grid;
-    justify-self: end;
     gap: 2rem;
-    padding-right: 1rem;
-    margin-top: 5rem;
     width: 70vw;
 }
 
