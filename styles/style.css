@@ -201,6 +201,7 @@ header {
 .nav-days {
     display: flex; 
     overflow-x: auto; 
+    border-bottom: 1px solid #CCCCCC;
 }
 
 /* Border bij dagen van de week */
@@ -238,7 +239,6 @@ header {
     gap: 1.5rem;
     padding: 1rem;
     overflow-x: auto;
-    border-top: 1px solid #CCCCCC;    
     border-bottom: 1px solid #CCCCCC;
 
     @media screen and (min-width: 800px) {
@@ -283,7 +283,6 @@ header {
     border-bottom: 1px solid #CCCCCC;
     padding: 0rem 4rem;
     border-radius: 0 0 25px 25px;
-
     position: absolute;
     left: 50%; 
     translate: -50%;
@@ -324,7 +323,7 @@ main {
 /* Grid layout programmering */
 .programmering {
     display: grid;
-    gap: 2rem;
+    gap: .5rem;
     width: 70vw;
 }
 
@@ -340,24 +339,39 @@ main {
 .show-card {
     display: grid; 
     grid-template-columns: .1fr 1fr 2fr;
-    grid-template-rows: 1fr auto 1fr auto .2fr;
-    height: 13rem;   
+    grid-template-rows: auto auto 1fr auto;
+    height: 12rem;   
 }
+
+/* Grootte cards o.b.v. tijdsduur */
+/* .two-hours {
+    height: 9rem;
+}
+
+.three-hours {
+    height: 14rem;
+}
+
+.four-hours {
+    height: 18rem;
+} */
 
 /* Gekleurde lijn */
 .colored-line {
     grid-column: 1/2;
     grid-row: 1/-1;
     width: .5rem; 
+
 }
 
 /* Show titel */
 .title-card {
     grid-column: 3/4;
     grid-row: 1/2;
-    align-self: center; 
+    align-self: end; 
     justify-self: start;
     text-transform: uppercase;
+    padding-top: 1rem;
 }
 
 /* Show tijd */
@@ -366,20 +380,18 @@ main {
     grid-row: 4/5;
     align-self: start;
     justify-self: start;
-    margin-left: 1rem;
-
+    padding: 0 0 0 1rem;
     /* Flex als parent */
     display: flex; 
     align-items: center;
     gap: .5rem;
 }
 
-
 /* Show beschrijving */
 .info-card {
     grid-column: 3/4;
     grid-row: 2/3;
-    align-self: end;
+    align-self: center;
     justify-self: start;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -406,7 +418,8 @@ main {
     align-self: end;
     justify-self: start;
     margin-top: 1.3rem;
-    margin-left: 1rem;
+    padding: 0 0 1rem 1rem;
+
 
     /* Flex als parent */
     display: flex; 
@@ -423,7 +436,7 @@ main {
     width: 1.8rem;
     height: 1.8rem;
     border-radius: 50%; 
-    margin-right: 1.5rem;
+    margin-right: 1rem;
 
     /* Grid als parent om afbeelding te centreren */
     display: grid; 
@@ -433,6 +446,77 @@ main {
 /* Grootte afbeelding link '>' symbol */
 .link-card img {
     width: 1.2rem;
+}
+
+/* Player */
+footer {
+    display: grid; 
+    place-items: center;
+
+    margin-top: 5rem;
+
+}
+
+.player {
+    display: grid; 
+    grid-template-columns: auto auto auto; 
+    grid-template-rows: auto auto; 
+    filter: drop-shadow(0px 0px 8px #bebebe);
+    border-radius: .5rem;
+    width: 25rem;
+    height: 5.5rem;
+
+    position: fixed; 
+    bottom: 1.5rem;
+    z-index: 3; 
+}
+
+.title-player {
+    grid-column: 2/4;
+    grid-row: 1/2;
+    align-self: center; 
+    justify-self: start;
+    text-transform: uppercase;
+}
+
+.song-player {
+    grid-column: 2/3; 
+    grid-row: 2/3;
+    align-self: start; 
+    justify-self: start;
+
+    /* Flex als parent om item te centreren */
+    display: flex; 
+    align-items: center;
+    gap: .5rem;
+}
+
+.img-player {
+    grid-column: 1/2; 
+    grid-row: 1/3;
+    align-self: center;
+    justify-self: center;
+    width: 4.5rem;
+    border-radius: .5rem;
+    
+}
+
+.play {
+    grid-column: 3/4;
+    grid-row: 1/3;
+    align-self: center;
+    justify-self: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%; 
+
+    /* Grid als parent om items te centreren */
+    display: grid; 
+    place-items: center;
+}
+
+.play img {
+    width: 1rem;
 }
 
 
