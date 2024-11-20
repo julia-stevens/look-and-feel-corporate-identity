@@ -47,7 +47,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: .5rem 1rem;
-    position: relative;
 
     @media screen and (min-width: 800px) {
         gap: 1rem;
@@ -56,8 +55,10 @@ nav {
 
 /* Header boven de main */
 header {
-    position: relative; 
-    z-index: 2; 
+    position: fixed; 
+    width: 100vw; 
+    top: 0; 
+    z-index: 999;
 }
 
 /* Zender logo */
@@ -318,12 +319,13 @@ main {
     margin-top: 5rem;
     position: relative; 
     z-index: 1; 
+    margin-top: 17rem;
 }
 
 /* Grid layout programmering */
 .programmering {
     display: grid;
-    gap: .5rem;
+    gap: 2rem;
     width: 70vw;
 }
 
@@ -340,21 +342,55 @@ main {
     display: grid; 
     grid-template-columns: .1fr 1fr 2fr;
     grid-template-rows: auto auto 1fr auto;
-    height: 12rem;   
+    height: 12rem;
+
+    --two-hours: .8;
+    --three-hours: 1.1;
+    --four-hours: 1.45;
+
 }
 
 /* Grootte cards o.b.v. tijdsduur */
-/* .two-hours {
-    height: 9rem;
+.two-hours {
+    height: calc(12rem * var(--two-hours));
+
+        grid-template-rows: 1fr auto;
+
+    .title-card {
+        grid-row: 1/2;
+        align-self: center;
+    }
+
+    .time-card {
+        grid-row: 2/3;
+    }
+
+    .info-card {
+        display: none;
+    }
+
+    .dj-card {
+        grid-row: 2/3;
+
+    }
+
+    .thumbnail-card {
+        grid-row: 1/2;
+    }
+
+    .link-card {
+        grid-row: 2/3;
+    }
 }
 
 .three-hours {
-    height: 14rem;
+    height: calc(12rem * var(--three-hours));
+    translate: 0 0rem;
 }
 
 .four-hours {
-    height: 18rem;
-} */
+    height: calc(12rem * var(--four-hours));
+}
 
 /* Gekleurde lijn */
 .colored-line {
@@ -381,6 +417,7 @@ main {
     align-self: start;
     justify-self: start;
     padding: 0 0 0 1rem;
+    
     /* Flex als parent */
     display: flex; 
     align-items: center;
@@ -420,7 +457,6 @@ main {
     margin-top: 1.3rem;
     padding: 0 0 1rem 1rem;
 
-
     /* Flex als parent */
     display: flex; 
     align-items: center;
@@ -452,9 +488,7 @@ main {
 footer {
     display: grid; 
     place-items: center;
-
     margin-top: 5rem;
-
 }
 
 .player {
@@ -498,7 +532,6 @@ footer {
     justify-self: center;
     width: 4.5rem;
     border-radius: .5rem;
-    
 }
 
 .play {
@@ -519,6 +552,8 @@ footer {
     width: 1rem;
 }
 
-
+.slam-programmering, .honderdp-programmering, .sublime-programmering {
+    display: none; 
+}
 
 

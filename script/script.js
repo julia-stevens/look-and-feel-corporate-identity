@@ -23,3 +23,4 @@ function toggleZenders() {
     navZenders.classList.toggle("showZenders");
     buttonImgZenders.classList.toggle("showZenders");
 }
+
