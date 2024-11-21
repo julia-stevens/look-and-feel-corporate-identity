@@ -295,6 +295,7 @@ aside {
     flex-direction: column;
     gap: 3rem;
     position: relative;
+
 }
 
 /* Gestreepte line tussen uren */
@@ -307,18 +308,23 @@ aside > time::after {
     color: #CCCCCC;
 }
 
+aside time {
+    font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
+}
+
 /* Flex layout desktop primary en secondary cards*/
 main {
-    display: flex; 
+    display: flex;
+    justify-content: center; 
     gap: 2rem;
-
+    padding: 0 1.5rem;
 }
 
 /* Flex layout van de tijdlijn en de programmering */
 .main {
     display: flex; 
     justify-content: center;
-    gap: 3rem;
+    gap: 1rem;
     margin-top: 5rem;
     position: relative; 
     z-index: 1; 
@@ -516,6 +522,8 @@ main {
 /* Grootte afbeelding logo radiozenders op desktop */
 .programmering-logo img {
     width: 8rem;
+    height: 2rem;
+    object-fit: contain; 
     opacity: 0.5; 
     transition: .3s ease-in;
 }
@@ -696,16 +704,15 @@ footer {
 /* ======== DJ'S Pagina ======== */
 .main-djs {
     margin-top: 12rem; 
-    text-align: center;
+
+    /* Flex layout als parent */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+
 
     @media screen and (min-width: 800px) {
         margin-top: 10rem;
-        /* margin-left: 1rem; */
-        text-align: start;
-
-        /* Flex layout als parent */
-        display: flex; 
-        gap: 1.5rem;
     }
 
 }
@@ -725,13 +732,13 @@ footer {
     margin: 0; 
 }
 
-.dj-card {
+.dj-card-img {
     display: flex; 
     flex-direction: column;
     filter: drop-shadow(0px 0px 8px #bebebe);
 }
 
-.dj-card figure {
+.dj-card-img figure {
     /* Grid layout als parent, om items te centreren */
     display: flex;
     flex-direction: column;
@@ -740,14 +747,14 @@ footer {
     border-radius: .5rem;
 }
 
-.dj-card figure img {
+.dj-card-img figure img {
     width: 100%; 
     height: 100%; 
     object-fit: cover;
     border-radius: .5rem .5rem 0 0;
 }
 
-.dj-card figure figcaption {
+.dj-card-img figure figcaption {
     width: 100%; 
     text-align: center;
 
@@ -796,12 +803,12 @@ footer {
     }
 }
 
-.djs-overig .dj-card {
+.djs-overig .dj-card-img {
     opacity: .5; 
     transition: .3s ease-in; 
 }
 
-.djs-overig .dj-card:hover {
+.djs-overig .dj-card-img:hover {
     opacity: 1; 
     transition: .3s ease-in;
 
