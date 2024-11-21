@@ -647,8 +647,8 @@ main {
 /* Player */
 footer {
     /* Grid layout, player in midden van pagina*/
-    display: grid; 
-    place-items: center;
+    display: flex; 
+    justify-content: center;
     margin-top: 5rem;
 }
 
