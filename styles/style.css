@@ -513,7 +513,7 @@ main {
 }
 
 /* Flex layout programmering SLAM, 100% NL en SUBLIME */
-.slam-programmering, .honderdp-programmering, .sublime-programmering {
+.slam-programmering-div, .honderdp-programmering-div, .sublime-programmering-div {
     display: flex; 
     flex-direction: column;
     align-items: center;
@@ -566,9 +566,22 @@ main {
             justify-self: center;
             padding-top: .5rem;
             
-            /* animation: scroll-title 10s linear infinite; Animation for scrolling */
             white-space: nowrap; 
         }
+
+        .scroll-title {
+            animation: scroll-title 7s linear infinite;
+            display: inline-block; 
+            padding-left: 1.5rem; 
+            white-space: nowrap;
+        }
+        
+        .scroll-title::after {
+            content: ''; 
+            display: inline-block;
+            width: 1rem; 
+        }
+        
         
         /* Tijd programmering */
         .time-card {
@@ -616,14 +629,15 @@ main {
 /* Keyframes for scrolling animation */
 @keyframes scroll-title {
     0% {
-        transform: translateX(100%); /* Start the text fully out of view to the right */
+        transform: translateX(15%); /* Start from the left */
+    }
+    50% {
+        transform: translateX(-15%); /* Move completely out of view to the left */
     }
     100% {
-        transform: translateX(-100%); /* Move the text completely out of view to the left */
+        transform: translateX(15%); /* Start from the left */
     }
 }
-
-
 
 
 /* Player */
