@@ -1,3 +1,21 @@
+:focus-visible {
+    outline: 3px dashed white;
+    outline-offset: 6px;
+}
+
+.skip-link {
+    color: white; 
+    padding: 1rem;
+    position: absolute; 
+    top: 3rem; 
+    z-index: 9999;
+    left: -10000px;
+}
+
+.skip-link:focus {
+    left: 2rem; 
+}
+
 .programmering li {
     filter: inherit;
 }
@@ -6,6 +24,11 @@
     filter: drop-shadow(0px 0px 8px black);
 }
 
-nav {
-    border-bottom: solid 1px #CECECE;
+.nav-radio {
+    border-top: solid 1px #CECECE;
+}
+
+/* Wanneer class .showZenders getoggled, verander afbeelding */
+.nav-zenders button img.showZenders {
+    content: url("../assests/arrow-up-white.svg");
 }
