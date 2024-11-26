@@ -10,6 +10,10 @@
 </head>
 
 <body class="background-neutral veronica-background-neutral">
+
+    <!-- SKIP LINK -->
+    <a href="#djs" class="skip-link secondary veronica-secondary font-nav-primary">Skip naar de DJ's</a>
+
     <header>
         <nav class="primary veronica-primary">
             <a class="nav-logo" href="index.html"><img src="./assests/veronica-logo-2.svg" alt="Ga naar Home"
@@ -43,18 +47,18 @@
         </ul>
 
         <div class="nav-zenders">
-            <ul class="background-neutral veronica-background-neutral">
-                <li><a href="#"><img src="./assests/radio-veronica-bg.png" alt="Bekijk het programma van Radio Veronica"
+            <button class="background-neutral veronica-background-neutral zenders-button"><img src="./assests/arrow-down.svg"
+                alt="Open menu" width="30"></button>
+            <ul class="background-neutral veronica-background-neutral zenders-menu" id="zenders-menu">
+                <li><a tabindex="-1" index.html"><img src="./assests/radio-veronica-bg.png" alt="Bekijk het programma van Radio Veronica"
                             width="50"></a></li>
-                <li><a href="#"><img src="./assests/slam-logo.png" alt="Bekijk het programma van Slam" width="50"></a>
+                <li><a tabindex="-1" href="slam.html"><img src="./assests/slam-logo.png" alt="Bekijk het programma van Slam" width="50"></a>
                 </li>
-                <li><a href="#"><img src="./assests/100p-logo.png" alt="Bekijk het programma van 100%NL" width="50"></a>
+                <li><a tabindex="-1" href="#"><img src="./assests/100p-logo.png" alt="Bekijk het programma van 100%NL" width="50"></a>
                 </li>
-                <li><a href="#"><img src="./assests/sublime-logo.png" alt="Bekijk het programma van Sublime"
+                <li><a tabindex="-1" href="#"><img src="./assests/sublime-logo.png" alt="Bekijk het programma van Sublime"
                             width="50"></a></li>
             </ul>
-            <button class="background-neutral veronica-background-neutral"><img src="./assests/arrow-down.svg"
-                    alt="Open menu" width="30"></button>
         </div>
     </header>
 
@@ -63,7 +67,7 @@
             <!-- DJ's RADIO VERONICA -->
             <p class="font-card-title">DJ's Radio Veronica</p>
 
-            <ul class="veronica-djs djs-overzicht">
+            <ul class="veronica-djs djs-overzicht" id="djs">
                 <li class="dj-card-img">
                     <a class="dj-link" href="#">
                         <figure>
