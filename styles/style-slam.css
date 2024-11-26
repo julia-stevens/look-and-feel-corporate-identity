@@ -5,3 +5,7 @@
 .player {
     filter: drop-shadow(0px 0px 8px black);
 }
+
+nav {
+    border-bottom: solid 1px #CECECE;
+}

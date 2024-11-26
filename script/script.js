@@ -1,4 +1,4 @@
-// Hamburger navigatie
+// Hamburger navigatie in nav
 const navHamburger = document.querySelector("nav button");
 
 navHamburger.addEventListener("click", toggleMenu);
@@ -11,7 +11,7 @@ function toggleMenu() {
     navButton.classList.toggle("showMenu");
 }
 
-// Zenders menu 
+// Zenders menu bij nav
 const buttonZenders = document.querySelector(".nav-zenders button");
 
 buttonZenders.addEventListener("click", toggleZenders);
@@ -60,6 +60,15 @@ window.addEventListener('resize', () => {
     });
 });
 
+// Current time indicator
+function updateTime() {
+    const now = new Date();
 
+    const currentTime = now.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+    
+    document.querySelector(".current-time-indicator").textContent = currentTime; 
+}
+
+setInterval(updateTime, 1000);
 
 
