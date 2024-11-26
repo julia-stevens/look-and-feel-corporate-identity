@@ -16,6 +16,12 @@
     left: 2rem; 
 }
 
+.nav-days a:focus-visible {
+    outline: 3px dashed white;  
+    outline-offset: -.5rem;
+    display: block;
+}
+
 .programmering li {
     filter: inherit;
 }

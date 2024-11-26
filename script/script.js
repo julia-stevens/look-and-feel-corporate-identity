@@ -71,4 +71,23 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 
+// Tab-index 
+document.addEventListener('DOMContentLoaded', function () {
+    // Select the button
+    const button = document.querySelector('.zenders-button');
+    
+    if (button) {
+        // Select all menu items
+        const menuItems = document.querySelectorAll('#zenders-menu li a');
 
+        // Add click event listener to the button
+        button.addEventListener('click', function() {
+            menuItems.forEach(function(anchor) {
+                // Change tabindex to 0 to make the links focusable
+                anchor.setAttribute('tabindex', '0');
+            });
+        });
+    } else {
+        console.error("Button with class 'zenders-button' not found.");
+    }
+});

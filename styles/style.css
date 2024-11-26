@@ -91,15 +91,15 @@ header {
 /* Hamburger */
 .nav-button {
     order: 0;
+
+    @media screen and (min-width: 800px) {
+        display: none;
+    }
 }
 
 /* Hamburger afbeelding */
 .nav-button img {
     width: 50px;
-
-    @media screen and (min-width: 800px) {
-        display: none;
-    }
 }
 
 /* Wanneer .showMenu class getoggled, verander afbeelding */
@@ -306,6 +306,7 @@ header {
     position: absolute;
     left: 50%; 
     translate: -50%;
+    top: 100%;
 
     @media screen and (min-width: 1100px) {
         display: none;
@@ -568,6 +569,10 @@ main {
     translate: -50% 0%;
     z-index: 9; 
 }
+
+.programmering-logo:focus{
+    outline-offset: 2rem;
+}   
 
 /* .programmering-logo img:hover {
     opacity: 1;
