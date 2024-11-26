@@ -884,8 +884,10 @@ footer {
     transition: .3s ease-in;
 }
 
-
-
+/* Beter contrast brand kleur Veronica */
+.veronica-primary {
+    --brand-primary: #0076D1;
+    }
 
 
 
