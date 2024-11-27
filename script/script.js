@@ -1,27 +1,56 @@
 // Hamburger navigatie in nav
 const navHamburger = document.querySelector("nav button");
+const navMenu = document.querySelector("nav ul");
+const navButton = document.querySelector(".nav-button img");
 
 navHamburger.addEventListener("click", toggleMenu);
 
 function toggleMenu() {
-    const navMenu = document.querySelector("nav ul");
-    const navButton = document.querySelector(".nav-button img");
-
     navMenu.classList.toggle("showMenu");
     navButton.classList.toggle("showMenu");
+
+    if (navMenu.hasAttribute("inert")) {
+        navMenu.removeAttribute("inert");
+    } else {
+        navMenu.setAttribute("inert", true);
+    }
 }
+
+// hamburger als je resized
+function reportWindowSize() {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth >= 800) {
+        navMenu.removeAttribute("inert");
+    } else {
+        navMenu.setAttribute("inert", true);
+    }
+}
+
+// checken als het schermbreedte verandert
+window.onresize = reportWindowSize;
+
+// checken bij laden pagina
+reportWindowSize();
 
 // Zenders menu bij nav
 const buttonZenders = document.querySelector(".nav-zenders button");
+const navZenders = document.querySelector(".nav-zenders");
+const buttonImgZenders = document.querySelector(".nav-zenders button img");
+
+const navZendersUl = document.querySelector(".zenders-menu")
 
 buttonZenders.addEventListener("click", toggleZenders);
 
 function toggleZenders() {
-    const navZenders = document.querySelector(".nav-zenders");
-    const buttonImgZenders = document.querySelector(".nav-zenders button img");
-
     navZenders.classList.toggle("showZenders");
     buttonImgZenders.classList.toggle("showZenders");
+
+    if (navZendersUl.hasAttribute("inert")) {
+        navZendersUl.removeAttribute("inert");
+    } else {
+        navZendersUl.setAttribute("inert", true);
+    }
 }
 
 // Titels op cards
@@ -64,30 +93,8 @@ window.addEventListener('resize', () => {
 function updateTime() {
     const now = new Date();
 
-    const currentTime = now.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
-    
-    document.querySelector(".current-time-indicator").textContent = currentTime; 
+    const currentTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    document.querySelector(".current-time-indicator").textContent = currentTime;
 }
-
 setInterval(updateTime, 1000);
-
-// Tab-index 
-document.addEventListener('DOMContentLoaded', function () {
-    // Select the button
-    const button = document.querySelector('.zenders-button');
-    
-    if (button) {
-        // Select all menu items
-        const menuItems = document.querySelectorAll('#zenders-menu li a');
-
-        // Add click event listener to the button
-        button.addEventListener('click', function() {
-            menuItems.forEach(function(anchor) {
-                // Change tabindex to 0 to make the links focusable
-                anchor.setAttribute('tabindex', '0');
-            });
-        });
-    } else {
-        console.error("Button with class 'zenders-button' not found.");
-    }
-});
