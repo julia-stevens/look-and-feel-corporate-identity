@@ -149,6 +149,7 @@ header {
     translate: -150% 96.5px; 
     padding: 1rem;
     display: flex; 
+    transition: .3s ease;
 
     /* Flex layout als parent */
     flex-direction: column;
@@ -174,6 +175,7 @@ header {
 /* Laat menu zien bij .showMenu class */
 .nav-links.showMenu {
     translate: -1rem 96.5px;
+    transition: .3s ease;
 } 
 
 /* Bij hover, voeg border bottom toe */
